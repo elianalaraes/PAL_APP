@@ -15,6 +15,7 @@ def login():
         if user and user.password == form.password.data:
             session['user_id'] = user.id
             session['user_name'] = user.name
+            session['user_role'] = user.role
 
             flash("Logged in successfully!", "success")
             if user.role == "Admin":
@@ -26,4 +27,10 @@ def login():
 
 @main.route('/admin')
 def admin():
-    return render_template('admin.html')
+    username = session.get('user_name')
+    students = []
+    for user in User.query.all():
+        if user.role == "Student":
+            students.append(user)
+    return render_template('admin.html', username=username, students=students)
+

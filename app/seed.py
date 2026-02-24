@@ -13,7 +13,19 @@ with app.app_context():
         email="pal.tutor@ncl.ac.uk",
         password="password123",
         name="Eliana Lara",
-        role="Admin"
+        role="Admin",
+        id_number = 230740851
     )
     db.session.add(admin)
+    db.session.commit()
+
+    # Tutor
+    student = User(
+        email="pal.student@ncl.ac.uk",
+        password="password123",
+        name="Anna Li",
+        role="Student",
+        id_number=230740855
+    )
+    db.session.add(student)
     db.session.commit()

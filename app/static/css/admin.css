@@ -1,0 +1,215 @@
+/* ---------- GENERAL ---------- */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    color: #6083b5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- TOP HEADER ---------- */
+.admin-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1d1547;
+    color: white;
+    gap: 2rem; /* space between title and nav */
+}
+
+.admin-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Top navigation links */
+.top-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.top-nav a {
+    color: #e5e7eb;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.top-nav a:hover {
+    background: #334155;
+}
+
+/* Profile section on the right */
+.profile {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.admin-main {
+    padding: 2rem;
+    margin-left: 0; /* no sidebar now */
+}
+
+/* ---------- SECTION HEADER ---------- */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.add-btn {
+    margin-left: auto;
+    background: #0f172a;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #16213f;
+}
+
+/* ---------- GRID & CARDS ---------- */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 1.5rem;
+}
+
+.student-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    color: inherit;
+    transition: box-shadow 0.2s ease;
+}
+
+.student-card:hover {
+    box-shadow: 0 0 0 2px #e5e7eb;
+}
+
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email {
+    color: #6b7280;
+    margin: 8px 0;
+}
+
+.badges {
+    display: flex;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.badge {
+    background: rgba(134, 115, 255, 0.56);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.delete-icon {
+    color: red;
+    margin-left: auto;
+}
+
+/* ---------- MODAL ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.modal input,
+.modal textarea {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.cancel-btn {
+    background: #e5e7eb;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button {
+    width: 100%;
+    padding: 14px;
+    background-color: #726aea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3d3795;
+}
+
+/* ---------- NOTES ---------- */
+.notes {
+    background-color: #f9f9f9;
+    border-left: 4px solid #166cc3;
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+    border-radius: 5px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.notes .label {
+    font-weight: bold;
+    color: #166cc3;
+    margin-right: 5px;
+}

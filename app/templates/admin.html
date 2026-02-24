@@ -1,1 +1,74 @@
-hola
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}"> <!-- Link your CSS -->
+</head>
+<body>
+
+    <!-- ---------- TOP NAV ---------- -->
+    <header class="admin-header">
+        <h1>Admin Panel</h1>
+        <nav class="top-nav" style="margin-left: 2rem;">
+            <a href="#">Sessions</a>
+            <a href="#">Students</a>
+            <a href="#">PAL</a>
+            <a href="#">Stats</a>
+        </nav>
+        <div class="profile" style="margin-left:auto;">
+            <span>{{username}}</span>
+        </div>
+    </header>
+
+    <!-- ---------- MAIN CONTENT ---------- -->
+    <div class="admin-main" style="margin-left:0; padding:2rem;">
+        <!-- Section Header -->
+        <div class="section-header">
+            <div class="section-title">Student List</div>
+            <button class="add-btn" onclick="openModal()">Add Student</button>
+        </div>
+
+        <!-- Grid of Students -->
+        <div class="students-grid">
+            {% for student in students %}
+                <a href="#" class="student-card">
+                    <div class="student-header">
+                        <h3>{{student.name}}</h3>
+                        <span class="delete-icon">✖</span>
+                    </div>
+                    <p class="email">{{student.email}}</p>
+                    <div class="badges">
+                        <span class="badge">{{student.id_number}}</span>
+                    </div>
+                </a>
+            {% endfor %}
+    </div>
+
+    <!-- ---------- MODAL ---------- -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <h2>Add Student</h2>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Notes"></textarea>
+            <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+                <button class="button">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('modal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+        }
+    </script>
+
+</body>
+</html>
