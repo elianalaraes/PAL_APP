@@ -28,7 +28,7 @@
       {% endif %}
     {% endwith %}
 
-    <form method="POST" novalidate>
+    <form method="POST">
       {{ form.hidden_tag() }}
 
       <label>Email</label>
@@ -38,7 +38,8 @@
         {{ form.password(class="form-control", placeholder="Password") }}
 
         {{ form.submit(class="button") }}
-        <p>email="pal.tutor@ncl.ac.uk", password="password123"</p>
+
+      <p>email="pal.tutor@ncl.ac.uk", password="password123"</p>
     </form>
 
     <div class="divider"></div>
